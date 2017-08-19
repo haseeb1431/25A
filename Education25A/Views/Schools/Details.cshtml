@@ -1,0 +1,90 @@
+﻿@model Education25A.Models.School
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>School</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentProvince)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentProvince)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNumber2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNumber2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalEnrollment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalEnrollment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FocalPersonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FocalPersonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FocalPersonContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FocalPersonContact)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

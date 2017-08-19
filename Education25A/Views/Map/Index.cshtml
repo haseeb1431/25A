@@ -1,0 +1,39 @@
+﻿@using Jmelosegui.Mvc.GoogleMap
+@using Education25A.Models
+@using System.Drawing
+
+@model IEnumerable<Education25A.Models.MapInfo>
+
+@{
+    ViewBag.Title = "Cluster Map";
+}
+
+@(
+
+    Html.GoogleMap()
+    .Name("map")
+    .Height(500)
+    .ApiKey("AIzaSyBcFjw-VCFSa9poYNpB3fA8ohEuBhULwEs")
+    .Center(c => c.Latitude(33.693911)
+                  .Longitude(73.065047))
+    .EnableMarkersClustering()
+    .MarkersGeocoding(true)
+    .BindTo<MapInfo, Marker>(Model, mapping => mapping.For<MapInfo>
+     (
+         binding => binding.ItemDataBound(
+
+             (marker, mapinfo) =>
+             {
+                 marker.Address = mapinfo.Address;
+                 if (mapinfo.IsSchool) marker.Icon =
+                      new MarkerImage("~/Images/school.png", new Size(20, 32), new Point(0, 0), new Point(0, 32));
+             }
+             )
+         ))
+)
+
+
+@section scripts
+    {
+    @(Html.GoogleMap().ScriptRegistrar())
+}
